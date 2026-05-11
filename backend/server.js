@@ -23,15 +23,16 @@ app.use('/api/users', authRoutes)           // postman:  http://localhost:3003/a
 app.use('/api/notes', noteRoutes)               
 
 
-// THE PRODUCTION BLOCK
+// --- THE PRODUCTION BLOCK ---
 if (process.env.NODE_ENV === 'production') {
-  // 1. Serve the static files from the React app
-  app.use(express.static(path.join(__dirname, 'frontend', 'dist')))
+    // 1. Serve the static files from the React app
+    app.use(express.static(path.join(__dirname, 'frontend', 'dist')));
 
-  // 2. Handle any requests that don't match your API routes
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html'));
-  });
+    // 2. Handle any requests that don't match your API routes
+    // CHANGE THIS LINE:
+    app.get('(.*)', (req, res) => {
+        res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html'));
+    });
 }
 
 
