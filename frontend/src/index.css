@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+@theme {
+  --color-cream: #F7F3ED;
+  --color-cream-dark: #EDE7DC;
+  --color-ink: #1C1810;
+  --color-ink-muted: #6B6257;
+  --color-ink-faint: #A8A09A;
+  --color-accent: #C4622D;
+  --color-accent-hover: #A84F22;
+  --color-accent-light: #F5E8E0;
+
+  --font-sans: "DM Sans", sans-serif;
+  --font-serif: "Lora", serif;
+}
+
+/* Ruled line texture */
+.bg-lined {
+  background-image: repeating-linear-gradient(
+    0deg,
+    transparent,
+    transparent 28px,
+    rgba(28, 24, 16, 0.035) 28px,
+    rgba(28, 24, 16, 0.035) 29px
+  );
+}
+
+html, body {
+  overflow-x: hidden;
+}
