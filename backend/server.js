@@ -38,10 +38,10 @@ if (process.env.NODE_ENV === 'production') {
 // connect database : 
 
 connectDB().then(() => {
-    const port = process.env.PORT || 3003
-    app.listen(port, () => {
-        console.log(`Server running on http://localhost:${port}`);
-    })
+    const PORT = process.env.PORT || 10000;
+    app.listen(PORT, "0.0.0.0", () => {
+        console.log(`Server running on port ${PORT}`);
+});
 }).catch((error) => {
     console.log("Error : ", error); 
 })
