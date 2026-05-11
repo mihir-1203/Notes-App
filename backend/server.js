@@ -30,9 +30,9 @@ if (process.env.NODE_ENV === 'production') {
 
     // 2. Handle any requests that don't match your API routes
     // CHANGE THIS LINE:
-    app.get('(.*)', (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html'));
-    });
+    app.get('/:splat*', (req, res) => {
+    res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html'));
+});
 }
 
 
