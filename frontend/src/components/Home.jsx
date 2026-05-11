@@ -12,7 +12,7 @@ const Home = () => {
     try {
       const token = localStorage.getItem("token");
       if (!token) { setError("No authentication token found. Please login"); return; }
-      const { data } = await axios.get("http://localhost:3003/api/notes", {
+      const { data } = await axios.get("/api/notes", {
         headers: { Authorization: `Bearer ${token}` },
       });
       setNotes(data);
@@ -42,7 +42,7 @@ const Home = () => {
     try {
       const token = localStorage.getItem("token");
       if (!token) { setError("No authentication token found. Please login"); return; }
-      await axios.delete(`http://localhost:3003/api/notes/${id}`, {
+      await axios.delete(`/api/notes/${id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       setNotes(notes.filter((note) => note._id !== id));
