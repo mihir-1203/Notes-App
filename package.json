@@ -2,7 +2,7 @@
   "name": "notes-app-root",
   "version": "1.0.0",
   "scripts": {
-  "build": "npm install && cd frontend && npm install && npm run build",
+  "build": "npm install && npm install --prefix frontend && npm run build --prefix frontend",
   "start": "node backend/server.js"
 }
 }
