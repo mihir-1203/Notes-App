@@ -26,7 +26,7 @@ app.use('/api/notes', noteRoutes)
 // THE PRODUCTION BLOCK
 if (process.env.NODE_ENV === 'production') {
   // 1. Serve the static files from the React app
-  app.use(express.static(path.join(__dirname, '/frontend/dist')));
+  app.use(express.static(path.join(__dirname, 'frontend', 'dist')))
 
   // 2. Handle any requests that don't match your API routes
   app.get('*', (req, res) => {
